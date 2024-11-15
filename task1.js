@@ -24,17 +24,21 @@ function checkPositiveOrNegative() {
 // 3. Проверка решений квадратного уравнения
 function quadraticEquationRoots() {
     const a = promptForNumber("Введите коэффициент a для квадратного уравнения:");
-    const b = promptForNumber("Введите коэффициент b для квадратного уравнения:");
-    const c = promptForNumber("Введите коэффициент c для квадратного уравнения:");
-
-    const discriminant = b * b - 4 * a * c;
-
-    if (discriminant > 0) {
-        console.log("Уравнение имеет два различных корня.");
-    } else if (discriminant === 0) {
-        console.log("Уравнение имеет один корень.");
+    if (a == 0) {
+        console.log("Уравнение не является квадратным.");
     } else {
-        console.log("Уравнение не имеет вещественных корней.");
+        const b = promptForNumber("Введите коэффициент b для квадратного уравнения:");
+        const c = promptForNumber("Введите коэффициент c для квадратного уравнения:");
+    
+        const discriminant = b * b - 4 * a * c;
+    
+        if (discriminant > 0) {
+            console.log("Уравнение имеет два различных корня.");
+        } else if (discriminant === 0) {
+            console.log("Уравнение имеет один корень.");
+        } else {
+            console.log("Уравнение не имеет вещественных корней.");
+        }
     }
 }
 
